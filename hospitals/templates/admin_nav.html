@@ -1,0 +1,131 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Sidebar 07</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../static/css/style2.css">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch" >
+			<nav id="sidebar" class="active" >
+        <header class="avatar">
+          <img src="{% static 'images/h8.png' %}" height="100" width="85" />
+          <br><br>
+          
+        </header>
+				<h6><a href="/" class="logo">Admin</a></h6>
+        <ul class="list-unstyled components mb-5" >
+         
+            <!-- <a href="#"><span class="fa fa-home"></span> Home</a> -->
+          </li>
+
+          <li class="nav-item dropdown">
+            <a  class="nav-linkr dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <img src="../static/images/result-icon-outcome-142471840.jpg" height="30" width="30">
+            </a>
+            <div class="dropdown-menu"><mark style="background-color:pink;">Appointment</mark>
+              <a style="color:black" class="dropdown-item" href="{% url 'add_appointment' %}">Add Appointment</a>
+              <a style="color:black"class="dropdown-item" href="{% url 'view_appointment' %}">View Appointment</a>
+              <div class="dropdown-divider"></div> 
+            </div>
+          </li>
+
+          <br>
+          <br>
+
+          <li class="nav-item dropdown">
+            <a  class="nav-linkr dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="../static/images/patient-icon-medical-health-care-260nw-554075098.webp" height="30" width="30">
+            </a>
+            <div class="dropdown-menu"><mark style="background-color:pink;">Patient</mark>
+              <a style="color:black" class="dropdown-item" href="{% url 'add_patient' %}">Add Patient</a>
+              <a style="color:black" class="dropdown-item" href="{% url 'view_patient' %}">View Patient</a>
+              <div class="dropdown-divider"></div> 
+            </div>
+          </li>
+
+          <br>
+          <br>
+          
+          <li class="nav-item dropdown">
+            <a  class="nav-linkr dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="../static/images/index.png" height="30" width="30">
+            </a>
+            <div class="dropdown-menu"><mark style="background-color:pink;">Doctor</mark>
+              <a style="color:black" class="dropdown-item" href="{% url 'add_doctor' %}">Add Doctor</a>
+              <a style="color:black" class="dropdown-item" href="{% url 'view_doctor' %}">View Doctor</a>
+              <div class="dropdown-divider"></div> 
+            </div>
+          </li>
+
+          <br>
+          <br>
+          <li class="nav-item dropdown">
+            <a  class="nav-linkr dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="../static/images/indexs.png" height="30" width="30">
+            </a>
+            <div class="dropdown-menu"><mark style="background-color:pink;">Queries</mark>
+              <a style="color:black" class="dropdown-item" href="{% url 'unread_queries' %}">Unread Queries</a>
+              <a style="color:black" class="dropdown-item" href="{% url 'read_queries' %}" >Read Queries</a>
+              <div class="dropdown-divider"></div> 
+            </div>
+          </li>
+            
+        </ul>
+
+        
+
+        <div class="footer">
+        	<p>
+					  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+					</p>
+        </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <div class="navbar-nav" style=" margin-left: 1000%;">
+                <button class="btn btn-danger" ><a href="{% url 'home'%}"class="nav-item nav-link"><i class="fas fa-power-off">Log Out</i></a></button>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- <h2 class="mb-4">Sidebar #07</h2> -->
+        <div class="logo" style="text-align: center;">
+          <a href="index.html"><img src="../static/medical/assets/img/logo/loder.png" alt=""></a>
+          <p class="title">Riverside Medical Clinic Management</p>
+       </div>
+        {% block content %}
+        {% endblock content %}
+      </div>
+		</div>
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/popper.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>

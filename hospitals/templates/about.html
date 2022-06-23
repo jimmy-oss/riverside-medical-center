@@ -1,0 +1,278 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Riverside Medical </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/medical/assets/img/logo/loder.png">
+
+   <!-- CSS here -->
+    <link rel="stylesheet" href="../static/medical/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/medical/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/medical/assets/css/slicknav.css">
+    <link rel="stylesheet" href="../static/medical/assets/css/animate.min.css">
+    <link rel="stylesheet" href="../static/medical/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="../static/medical/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../static/medical/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="../static/medical/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="../static/medical/assets/css/slick.css">
+    <link rel="stylesheet" href="../static/medical/assets/css/nice-select.css">
+    <link rel="stylesheet" href="../static/medical/assets/css/style.css">
+</head>
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+
+        <!--? Header Start -->
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2 col-md-1">
+                            <div class="logo">
+                                <a href="index.html"><img src="../static/medical/assets/img/logo/loder.png" alt=""></a>
+                                <p class="title">Riverside Medical Clinic</p>
+                             </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-10">
+                            <div class="menu-main d-flex align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="{% url 'home'%}">Home</a></li>
+                                            <li><a href="/">About</a></li>
+                                            <li><a href="{% url 'doctor'%}">Doctors</a></li>
+                                            <li><a href="{% url 'department'%}">Department</a></li>
+                                           
+                                            <li><a href="{% url 'contact'%}">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                    <a href="{% url 'login'%}" class="btn header-btn">Log in</a>
+                                </div>
+                            </div>
+                        </div>   
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <hr>
+    <main>
+        <!--? Hero Start -->
+        <!-- <div class="slider-area2">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 text-center">
+                                <h2>Contact Us</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Hero End -->
+        <!-- ================ contact section start ================= -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="section-title">
+                            <div class="section-subtitle">About Us</div>
+                            <h2 class="section-main-title">
+                                All About <strong>Hospitals</strong>
+                            </h2>
+                        </div>
+    
+                        <div class="about-item">
+                            <p>A hospital is a place where a person goes to be healed when he or
+                                she is sick or injured. Hospitals also treat people who do not stay
+                                overnight, called outpatients. Doctors and nurses work at hospitals.
+                                Doctors make use of advanced medical technology to heal patients.</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-sm-4 offset-sm-2">
+                     <div class="about-box">
+                       <img src="{% static 'images/mypic.jpg' %}">
+                     </div>
+                    </div>
+                </div>
+    
+                <div class="row mt-5">
+                    <div class="col-sm-4">
+                     <div class="about-boxx">
+                       <img src="{% static 'images/mypic2.jpg' %} " height="300" width="500">
+                     </div>
+                    </div>
+                    <div class="col-sm-6 offset-sm-2">
+                    <div class="about-item mt-5">
+                        <h4><span style="color:red">All About</span> <span style="color:green"><b>Doctor & Nurses</b></span></h4>
+                            <p>Doctors and Nurses may refer to a children's game of imaginative
+                                role-playing where medical profession roles are adopted and acted out.
+                            A nurse is a person who is trained to give care to people who are sick or injured.
+                                Nurses work with doctors and other health care workers to make patients.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row mt-5">
+                    <div class="col-sm-6">
+                    <div class="about-item mt-5">
+                        <h4><span style="color:green">All About</span> <span style="color:blue"><b>Sweeper</b></span></h4>
+                            <p>A Hospital cleaner a cleaning operative is a type of industrial or
+                                domestic worker who cleans homes,commercial premises and also clean
+                                the Hospital Plateform.A cleaner is someone who takes
+                                away garbage and cleans surfaces. Cleaners sometimes repair things,
+                                and maintain their equipment in good working.</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-sm-4 offset-sm-2">
+                     <div class="about-box">
+                       <img src="{% static 'images/pexels-artem-podrez-5726807.jpg' %}" height="300" width="500">
+                     </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- ================ contact section end ================= -->
+    </main>
+    <footer>
+        <!--? Footer Start-->
+        <div class="footer-area section-bg" data-background="../static/medical/assets/img/gallery/footer_bg.jpg">
+            <div class="container">
+                <div class="footer-top footer-padding">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-8">
+                            <div class="single-footer-caption mb-50">
+                                <!-- logo -->
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src="../static/medical/assets/img/logo/loder.png" alt=""></a>
+                                    <p style="color:whitesmoke" class="title">Riverside Medical Clinic</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>About Us</h4>
+                                    <div class="footer-pera">
+                                        <p class="info1">The No. 1 hospital in the nation, for you. </p>
+                                        <p class="info1">We have an enduring commitment to a healthier Kenyaland, and partner with organizations that share our vision..</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-number mb-50">
+                                    <h4><span>+254 </span>7885 3222</h4>
+                                    <p>riversidemedicalemail@gmail.com</p>
+                                </div>
+                                <!-- Form -->
+                                <div class="footer-form">
+                                    <div id="mc_embed_signup">
+                                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
+                                            <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'">
+                                            <div class="form-icon">
+                                                <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+                                                    Send
+                                                </button>
+                                            </div>
+                                            <div class="mt-10 info"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="row d-flex justify-content-between align-items-center">
+                        <div class="col-xl-9 col-lg-8">
+                            <div class="footer-copy-right">
+                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4">
+                            <!-- Footer Social -->
+                            <div class="footer-social f-right">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!-- Scroll Up -->
+    <div id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <!-- JS here -->
+
+    <script src="../static/medical/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="../static/medical/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../static/medical/assets/js/popper.min.js"></script>
+    <script src="../static/medical/assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="../static/medical/assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="../static/medical/assets/js/owl.carousel.min.js"></script>
+    <script src="../static/medical/assets/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="../static/medical/assets/js/wow.min.js"></script>
+    <script src="../static/medical/assets/js/animated.headline.js"></script>
+    
+    <!-- Nice-select, sticky -->
+    <script src="../static/medical/assets/js/jquery.nice-select.min.js"></script>
+    <script src="../static/medical/assets/js/jquery.sticky.js"></script>
+    <script src="../static/medical/assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- contact js -->
+    <script src="../static/medical/assets/js/contact.js"></script>
+    <script src="../static/medical/assets/js/jquery.form.js"></script>
+    <script src="../static/medical/assets/js/jquery.validate.min.js"></script>
+    <script src="../static/medical/assets/js/mail-script.js"></script>
+    <script src="../static/medical/assets/js/jquery.ajaxchimp.min.js"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="../static/medical/assets/js/plugins.js"></script>
+    <script src="../static/medical/assets/js/main.js"></script>
+
+    </body>
+</html>
