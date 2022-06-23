@@ -9,8 +9,16 @@ from datetime import date
 def About(request):
     return render(request,'about.html')
 
-def Index(request):
-    return render(request,'index.html')
+def home(request):
+    return render(request,'home.html')
+
+def doctor(request):
+    
+    return render(request ,'doctor.html')
+
+def department(request):
+    
+    return render(request ,'department.html')
 
 def contact(request):
     error = ""
@@ -55,7 +63,7 @@ def admin_home(request):
 
 def Logout(request):
     logout(request)
-    return redirect('index')
+    return redirect('home')
 
 def add_doctor(request):
     error=""
