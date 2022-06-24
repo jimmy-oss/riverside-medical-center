@@ -39,19 +39,19 @@ def appointment(request):
         #     ["wamaithaweru19@gmail.com"], #to email
 
         # )
-        message1 = (
-            'Riverside Admin',
-            'New Appointment by ' , 
-            email, ['jaelweru5@gmail.com']
-            )
+        # message1 = (
+        #     'Riverside Admin',
+        #     'New Appointment by ' , 
+        #     email, ['jaelweru5@gmail.com']
+        #     )
         
-        message2 = (
-            'Appointment', 
-            'Your Appointment has been confirmed and is set Incase of cancelation please contact as at +2541 134 890 .Thank you', 
-            email, ['wamaithaweru19@gmail.com']
-            )
+        # message2 = (
+        #     'Appointment', 
+        #     'Your Appointment has been confirmed and is set Incase of cancelation please contact as at +2541 134 890 .Thank you', 
+        #     email, ['wamaithaweru19@gmail.com']
+        #     )
 
-        send_mass_mail((message1, message2), fail_silently=False)
+        # send_mass_mail((message1, message2), fail_silently=False)
         return render(request ,'appointment.html',{"select_date":select_date,"message":message,"name":name,"email":email,"select_schedule":select_schedule,"number":number})
 
     else:
