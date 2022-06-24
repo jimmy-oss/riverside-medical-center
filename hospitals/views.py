@@ -54,7 +54,9 @@ def appointment(request):
         send_mass_mail((message1, message2), fail_silently=False)
         return render(request ,'appointment.html',{"select_date":select_date,"message":message,"name":name,"email":email,"select_schedule":select_schedule,"number":number})
 
-    
+    else:
+
+     return render(request ,'home.html',{})
 
 @login_required(login_url='signin')
 def department(request):
