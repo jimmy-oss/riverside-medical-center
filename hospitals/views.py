@@ -1,25 +1,122 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,logout,login
+from django.contrib import messages
+from django.contrib.auth.models import User,auth
+from django.core.mail import send_mass_mail
+from django.contrib.auth.decorators import login_required
+from django.conf import settings
 from .models import *
 from datetime import date
 
 # Create your views here.
-
+@login_required(login_url='signin')
 def About(request):
     return render(request,'about.html')
 
+@login_required(login_url='signin')
 def home(request):
     return render(request,'home.html')
 
+@login_required(login_url='signin')
 def doctor(request):
-    
     return render(request ,'doctor.html')
 
+# @login_required(login_url='signin')
+def appointment(request):
+    if request.method == "POST":
+        name=request.POST['name']
+        email=request.POST['email']
+        number=request.POST['number']
+        select_schedule=request.POST['select-schedule']
+        select_date=request.POST['select-date']
+        message= request.POST['message']
+
+        # send_mail(
+        #     name, #subject
+        #     "New appointment",  #message
+        #     email, #from email
+        #     ["wamaithaweru19@gmail.com"], #to email
+
+        # )
+        message1 = (
+            'Riverside Admin',
+            'New Appointment by ' , 
+            email, ['jaelweru5@gmail.com']
+            )
+        
+        message2 = (
+            'Appointment', 
+            'Your Appointment has been confirmed and is set Incase of cancelation please contact as at +2541 134 890 .Thank you', 
+            email, ['wamaithaweru19@gmail.com']
+            )
+
+        send_mass_mail((message1, message2), fail_silently=False)
+        return render(request ,'appointment.html',{"select_date":select_date,"message":message,"name":name,"email":email,"select_schedule":select_schedule,"number":number})
+
+    else:
+
+     return render(request ,'home.html',{})
+
+@login_required(login_url='signin')
 def department(request):
-    
     return render(request ,'department.html')
 
+def signup(request):
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        password2 = request.POST['password2']
+
+        if password == password2:
+            if User.objects.filter(email=email).exists():
+                messages.info(request, 'Email Taken')
+                return redirect('signup')
+            elif User.objects.filter(username=username).exists():
+                messages.info(request, 'Username Taken')
+                return redirect('signup')
+            else:
+                user = User.objects.create_user(username=username, email=email, password=password)
+                user.save()
+               
+
+                #log user in and redirect to settings page
+                user_login = auth.authenticate(username=username, password=password)
+                auth.login(request, user_login)
+
+                #create a Profile object for the new user
+                user_model = User.objects.get(username=username)
+                new_profile = Profile.objects.create(user=user_model, id_user=user_model.id)
+                new_profile.save()
+                return redirect('home')
+        else:
+            messages.info(request, 'Password Not Matching')
+            return redirect('signup')
+        
+    else:
+        return render(request, 'signup.html')
+    
+def signin(request):
+    
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/')
+        else:
+            messages.info(request, 'Credentials Invalid')
+            return redirect('signin')
+
+    else:
+        return render(request, 'signin.html')   
+    
+@login_required(login_url='signin')
 def contact(request):
     error = ""
     if request.method == 'POST':
@@ -35,6 +132,7 @@ def contact(request):
             error = "yes"
     return render(request, 'contact.html', locals())
 
+@login_required(login_url='signin')
 def adminlogin(request):
     error = ""
     if request.method == 'POST':
