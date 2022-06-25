@@ -10,10 +10,8 @@ Our hospital management website build with intelligence and design 🏥
 
 # DESCRIPTION &#127800;
 
-The website makes it easier for common mwananchi tu focus mainly the patient.
-The system displays the patient appointments form with their respective details after filling all the requirements needed.
-After the admin receives the appointment email he/she is able to log into the application and appoints the patient with a qualified doctor in the admin portal.
-In addition, the Patient can view their appointments in the application as they wait for the admin to contact them either by email or a phone call. 
+The website mainly focuses on the common mwananchi.The system displays the patient appointments form with their respective details after filling all the requirements needed.After the admin receives the appointment email he/she is able to log into the application and appoints the patient with a qualified doctor in the admin portal.
+In addition,the Patient can view their appointments in the application as they wait for the admin to contact them either by email or a phone call. 
 
 # Contributors &#129409;
 
