@@ -24,7 +24,7 @@ The website mainly focuses on ordinary users. After filling in all the requireme
 
 # BEHAVIOUR DRIVEN DEVELOPMENT 😇
 
-The Website system displays the patient form appointments details, and the administrator is able to appoint patients with their desired doctors.
+The Website system displays the patient form appointment details, and the administrator can appoint patients with their desired doctors.
 
 # INSTALLATION PROCESS ✨
 
@@ -64,7 +64,7 @@ DISABLE_COLLECTSTATIC=1
 # Improvement plans 💞️
 
 > <li> Patients are able to rate/review.</li>
-> <li> Patients are able to recieve their payment bills in the application once they are discharged.</li>
+> <li> Patients are able to receive their payment bills in the application once they are discharged.</li>
 
 # M.V.P 🤝
 
