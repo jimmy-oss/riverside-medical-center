@@ -60,19 +60,18 @@
                                         <li><a href="{% url 'about' %}">About</a></li>
                                         <li><a href="{% url 'doctor' %}">Doctors</a></li>
                                         <li><a href="{% url 'department' %}">Department</a></li>
-                                        
                                         <li><a href="{% url 'contact' %}">Contacts</a></li>
                                     </ul>
                                 </nav>
                             </div>
                             <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                <a href="{% url 'login' %}" class="btn header-btn">Admin Log in</a>
+                                <a href="{% url 'login' %}" class="btn header-btn">Log in</a>
                             </div>
                             <div class="header-right-btn f-right d-none d-lg-block ml-30">
                                 <a href="{% url 'signin' %}" class="btn header-btn">Log out</a>
                             </div>
                         </div>
-                    </div>   
+                    </div>      
                     <!-- Mobile Menu -->
                     <div class="col-12">
                         <div class="mobile_menu d-block d-lg-none"></div>
@@ -145,13 +144,13 @@
                         </div>
                         <p>Riverside Medical Clinic offers a host of information and resources to help make your patient or visitor experience exceptional..</p>
                         <div class="about-btn1 mb-30">
-                            <a href="about.html" class="btn about-btn">Find Doctors <i class="ti-arrow-right"></i></a>
+                            <a href="about.html" class="btn about-btn">Find Doctors .<i class="ti-arrow-right"></i></a>
                         </div>
                         <div class="about-btn1 mb-30">
                             <a href="about.html" class="btn about-btn2">Appointment <i class="ti-arrow-right"></i></a>
                         </div>
                         <div class="about-btn1 mb-30">
-                            <a href="about.html" class="btn about-btn2">Emergency <i class="ti-arrow-right"></i></a>
+                            <a href="about.html" class="btn about-btn2">Emargency 1 <i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -160,7 +159,7 @@
                     <div class="about-img ">
                         <div class="about-font-img d-none d-lg-block">
                             
-                            <img src="../static/images/pexels-ivan-samkov-4989135.jpg" height="400" width="500" style="margin-top: 8rem;">
+                            <img src="../static/images/pexels-ivan-samkov-4989135.jpg"  height="400" width="500" style="margin-top: 8rem;">
                         </div>
                         <div class="about-back-img ">
                             <img src="../static/images/pexels-jeff-denlea-3714743.jpg" height="400" width="300" style="margin-top: 4rem;">
@@ -243,7 +242,7 @@
                             </div>
                             <div class="col-lg-5">
                                 <div class="dept_thumb">
-                                    <img src="../static/images/pexels-tima-miroshnichenko-5452196.jpg" >
+                                    <img src="../static/images/pexels-tima-miroshnichenko-5452196.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -352,7 +351,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section-tittle text-center mb-100">
-                        <span>Our Gallary</span>
+                        <span>Our Gellary</span>
                         <h2>Our Medical Camp</h2>
                     </div>
                 </div>
@@ -526,6 +525,7 @@
                         </div>
                         <!--End Section Tittle  -->
                         <form id="contact-form" action="#" method="POST">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-box user-icon mb-30">
@@ -569,7 +569,7 @@
         </div>
         <!-- contact left Img-->
         <div class="from-left d-none d-lg-block">
-            <img src="../static/images/surgery.jpg" style="max-width: 800px; max-height:500px;margin-top:16rem" >
+            <img src="../static/images/pexels-vidal-balielo-jr-3376799.jpg" alt="">
         </div>
     </div>
     <!-- Contact form End -->
@@ -630,7 +630,7 @@
                 <div class="cl-xl-7 col-lg-8 col-md-10">
                     <!-- Section Tittle -->
                     <div class="section-tittle text-center mb-70">
-                        <span>Our recent news</span>
+                        <span>Oure recent news</span>
                         <h2>OurNews From Blog</h2>
                     </div> 
                 </div>

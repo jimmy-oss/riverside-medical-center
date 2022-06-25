@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate,logout,login
 from django.contrib import messages
 from django.contrib.auth.models import User,auth
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail # for mail send we need to import it
 from .models import *
 from datetime import date
 
@@ -77,7 +78,6 @@ def signin(request):
 
     else:
         return render(request, 'signin.html')   
-    
 @login_required(login_url='signin')
 def contact(request):
     error = ""
@@ -120,6 +120,41 @@ def admin_home(request):
 
     d = {'dc': dc, 'pc': pc, 'ac': ac}
     return render(request,'admin_home.html', d)
+
+def appointment(request):
+    if request.method == "POST":
+        name=request.POST['name']
+        email=request.POST['email']
+        number=request.POST['number']
+        select_schedule=request.POST['select-schedule']
+        select_date=request.POST['select-date']
+        message= request.POST['message']
+
+        # send_mail(
+        #     name, #subject
+        #     "New appointment",  #message
+        #     email, #from email
+        #     ["wamaithaweru19@gmail.com"], #to email
+
+        # )
+        # message1 = (
+        #     'Riverside Admin',
+        #     'New Appointment by ' , 
+        #     email, ['jaelweru5@gmail.com']
+        #     )
+        
+        # message2 = (
+        #     'Appointment', 
+        #     'Your Appointment has been confirmed and is set Incase of cancelation please contact as at +2541 134 890 .Thank you', 
+        #     email, ['wamaithaweru19@gmail.com']
+        #     )
+
+        # send_mass_mail((message1, message2), fail_silently=False)
+        return render(request ,'appointment.html',{"select_date":select_date,"message":message,"name":name,"email":email,"select_schedule":select_schedule,"number":number})
+
+    else:
+
+     return render(request ,'home.html',{})
 
 def Logout(request):
     logout(request)
