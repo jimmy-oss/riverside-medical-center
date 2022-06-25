@@ -9,6 +9,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="../static/medical/assets/img/logo/loder.png">
 
+	
 	<!-- CSS here -->
 	<link rel="stylesheet" href="../static/medical/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../static/medical/assets/css/owl.carousel.min.css">
@@ -60,18 +61,20 @@
                                         <li><a href="{% url 'about' %}">About</a></li>
                                         <li><a href="{% url 'doctor' %}">Doctors</a></li>
                                         <li><a href="{% url 'department' %}">Department</a></li>
+                                        
                                         <li><a href="{% url 'contact' %}">Contacts</a></li>
+
                                     </ul>
                                 </nav>
                             </div>
                             <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                <a href="{% url 'login' %}" class="btn header-btn">Log in</a>
+                                <a href="{% url 'login' %}" class="btn header-btn"> Admin Log in</a>
                             </div>
                             <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                <a href="{% url 'signin' %}" class="btn header-btn">Log out</a>
+                                <a href="{% url 'logout' %}" class="btn header-btn">Log out</a>
                             </div>
                         </div>
-                    </div>      
+                    </div>   
                     <!-- Mobile Menu -->
                     <div class="col-12">
                         <div class="mobile_menu d-block d-lg-none"></div>
@@ -159,7 +162,7 @@
                     <div class="about-img ">
                         <div class="about-font-img d-none d-lg-block">
                             
-                            <img src="../static/images/pexels-ivan-samkov-4989135.jpg"  height="400" width="500" style="margin-top: 8rem;">
+                            <img src="../static/images/pexels-ivan-samkov-4989135.jpg" height="400" width="500" style="margin-top: 8rem;">
                         </div>
                         <div class="about-back-img ">
                             <img src="../static/images/pexels-jeff-denlea-3714743.jpg" height="400" width="300" style="margin-top: 4rem;">
@@ -255,7 +258,7 @@
                                 <div class="dept_info">
                                     <h3>Dentist with surgical mask holding <br> scaler near patient</h3 >
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                                    <a href="#" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
+                                    <a href="" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
                                 </div>
                             </div>
                             <div class="col-lg-5">
@@ -524,38 +527,51 @@
                             </div>
                         </div>
                         <!--End Section Tittle  -->
-                        <form id="contact-form" action="#" method="POST">
+                        <form id="contact-form" action="{% url 'appointment'%}" method="POST">
                             {% csrf_token %}
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-box user-icon mb-30">
-                                        <input type="text" name="name" placeholder="Name">
+                                        <input type="text" Required name="name" placeholder="Name" style="font-size: 15px;">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-box email-icon mb-30">
-                                        <input type="text" name="email" placeholder="Phone">
+                                        <input type="text" Required name="contact" placeholder="Phone" style="font-size: 15px;">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 mb-30">
-                                    <div class="select-itms">
-                                        <select name="select" id="select2">
-                                            <option value="">Health Law</option>
-                                            <option value="">saiful islam</option>
-                                            <option value="">Arafath Miya</option>
-                                            <option value="">Shakil Miya</option>
-                                            <option value="">Tamim Sharker</option>
+                                    <div class="select-schedule">
+                                        <select  Required name="hr" id="select1">
+                                            <option value="Choose time">Choose time</option>
+                                            <option value="8:00 am to 10:00am">8:00 am to 10:00am</option>
+                                            <option value="11:00am to 1:00pm">11:00am to 1:00pm</option>
+                                            <option value="2:00pm to 4:00pm">2:00pm to 4:00pm</option>
+                                            <option value="8:00pm to 10:00pm">8:00pm to 10:00pm</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 mb-30">
+                                    <div class="select-date">
+                                        <select Required name="select-schedule" id="select2">
+                                            <option value="Choose Day">Choose Day</option>
+                                            <option value="Monday">Monday</option>
+                                            <option value="Tuesday">Tuesday</option>
+                                            <option value="Wednesday">Wednesday</option>
+                                            <option value="Thursday">Thursday</option>
+                                            <option value="Friday">Friday</option>
+
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-box subject-icon mb-30">
-                                        <input type="Email" name="subject" placeholder="Email">
+                                        <input type="Email" Required name="email" placeholder="Email" style="font-size: 15px;">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-box message-icon mb-65">
-                                        <textarea name="message" id="message" placeholder="Message"></textarea>
+                                        <textarea Required name="message" id="message" placeholder="Message" style="font-size: 15px;"></textarea>
                                     </div>
                                     <div class="submit-info">
                                         <button class="btn" type="submit">Submit Now <i class="ti-arrow-right"></i> </button>
@@ -563,13 +579,14 @@
                                 </div>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
             </div>
         </div>
         <!-- contact left Img-->
         <div class="from-left d-none d-lg-block">
-            <img src="../static/images/pexels-vidal-balielo-jr-3376799.jpg" alt="">
+            <img src="../static/images/pexels-vidal-balielo-jr-3376799.jpg"  style= "max-height:400px;max-width:550px;margin-top:18rem;">
         </div>
     </div>
     <!-- Contact form End -->

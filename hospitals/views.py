@@ -6,6 +6,7 @@ from django.contrib.auth.models import User,auth
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail # for mail send we need to import it
 from .models import *
+from django.core.mail import send_mass_mail
 from datetime import date
 
 # Create your views here.
@@ -121,14 +122,15 @@ def admin_home(request):
     d = {'dc': dc, 'pc': pc, 'ac': ac}
     return render(request,'admin_home.html', d)
 
+@login_required(login_url='signin')
 def appointment(request):
     if request.method == "POST":
-        name=request.POST['name']
-        email=request.POST['email']
-        number=request.POST['number']
-        select_schedule=request.POST['select-schedule']
-        select_date=request.POST['select-date']
-        message= request.POST['message']
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        contact=request.POST.get('contact')
+        select_schedule=request.POST.get('select-schedule')
+        hr=request.POST.get('hr')
+        message= request.POST.get('message')
 
         # send_mail(
         #     name, #subject
@@ -137,24 +139,29 @@ def appointment(request):
         #     ["wamaithaweru19@gmail.com"], #to email
 
         # )
-        # message1 = (
-        #     'Riverside Admin',
-        #     'New Appointment by ' , 
-        #     email, ['jaelweru5@gmail.com']
-        #     )
+        message1 = (
+            'Riverside Admin',
+            'New Appointment by ' , 
+            email,['jaelweru5@gmail.com']
+            )
         
-        # message2 = (
-        #     'Appointment', 
-        #     'Your Appointment has been confirmed and is set Incase of cancelation please contact as at +2541 134 890 .Thank you', 
-        #     email, ['wamaithaweru19@gmail.com']
-        #     )
+        message2 = (
+            'Appointment Request', 
+            'Your Appointment has been confirmed.For any inquiries contact us at +254716890612.Thank you for choosing Riverside Medical Center', 
+            email, ['wamaithaweru19@gmail.com']
+            )
 
-        # send_mass_mail((message1, message2), fail_silently=False)
-        return render(request ,'appointment.html',{"select_date":select_date,"message":message,"name":name,"email":email,"select_schedule":select_schedule,"number":number})
+        send_mass_mail((message1, message2), )
 
+
+        
+        return render(request ,'appointment.html', {"hr":hr,"message":message,"name":name,"email":email,"select_schedule":select_schedule,"contact":contact})
+        
+        
+        
     else:
 
-     return render(request ,'home.html',{})
+        return render(request ,'home.html')
 
 def Logout(request):
     logout(request)
